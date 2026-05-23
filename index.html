@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jornadas Deportivas - CACMQ </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <style>
+        /* Fondo global fijo para toda la página */
+        body {
+            background: url('img/fondo.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            min-height: 100vh;
+        }
+
+        /* Contenedores con transparencia para legibilidad */
+        .glass-panel {
+            background-color: rgba(255, 255, 255, 0.95) !important;
+            color: #333 !important;
+            border-radius: 15px;
+        }
+
+        .hero-section {
+            padding: 80px 0;
+            color: white;
+        }
+
+        .portada-destacada {
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border-radius: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .portada-destacada:hover {
+            transform: scale(1.03);
+        }
+
+        .card-img-top {
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .img-galeria-preview {
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="img/icono.jpg" alt="Logo" width="40" height="40" class="d-inline-block align-text-top me-2 rounded-circle bg-white">
+                <span class="fs-6 fs-md-5">Jornadas Deportivas CACMQ</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html"><i class="bi bi-house-door-fill"></i> Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="futbol.html">⚽ Fútbol</a></li>
+                    <li class="nav-item"><a class="nav-link" href="basketball.html">🏀 Basketball</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ecuavoley.html">🏐 Ecuavoley</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start mb-4 mb-md-0">
+                    <span class="badge bg-danger mb-3 px-3 py-2 text-uppercase fw-bold">CACMQ 2026</span>
+                    <h1 class="display-3 fw-bold mb-3">Jornadas Deportivas Institucionales</h1>
+                    <p class="lead mb-4">Selecciona una disciplina para revisar las tablas de posiciones, goleadores, encestadores y resultados oficiales.</p>
+                </div>
+                <div class="col-md-6 text-center">
+                    <img src="img/portada.jpg" alt="Portada Jornadas" class="img-fluid portada-destacada">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container my-5">
+        <section class="mb-5 p-4 shadow-lg glass-panel">
+            <h3 class="fw-bold mb-3 text-center">
+                <i class="bi bi-calendar3 text-primary"></i> AGENDA DE ENCUENTROS DEPORTIVOS
+            </h3>
+            <div class="d-flex flex-wrap gap-3 justify-content-center">
+                <a href="detalle.html?dia=26" class="btn btn-outline-primary px-4 py-2"><span class="d-block h5 mb-0">26</span> Mayo</a>
+                <a href="detalle.html?dia=27" class="btn btn-outline-primary px-4 py-2"><span class="d-block h5 mb-0">27</span> Mayo</a>
+                <a href="detalle.html?dia=28" class="btn btn-outline-primary px-4 py-2"><span class="d-block h5 mb-0">28</span> Mayo</a>
+                <a href="detalle.html?dia=29" class="btn btn-outline-primary px-4 py-2"><span class="d-block h5 mb-0">29</span> Mayo</a>
+            </div>
+        </section>
+
+        <h2 class="text-center mb-4 fw-bold text-white shadow-sm">Disciplinas Deportivas</h2>
+        
+        <div class="row g-4 justify-content-center">
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-lg border-0 text-center glass-panel">
+                    <img src="img/futbol.jpg" class="card-img-top" alt="Fútbol">
+                    <div class="card-body d-flex flex-column">
+                        <h4 class="card-title fw-bold">⚽ FÚTBOL</h4>
+                        <p class="card-text small">Categorías Masculino (A y B) y Femenino. Tablas de posiciones y goleadores.</p>
+                        <a href="futbol.html" class="btn btn-primary mt-auto fw-bold py-2">Ver Categorías y Tablas</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-lg border-0 text-center glass-panel">
+                    <img src="img/basketball.jpg" class="card-img-top" alt="Basketball">
+                    <div class="card-body d-flex flex-column">
+                        <h4 class="card-title fw-bold">🏀 BASKETBALL</h4>
+                        <p class="card-text small">Categoría Única. Tabla de posiciones general y máximos encestadores.</p>
+                        <a href="basketball.html" class="btn btn-warning mt-auto fw-bold py-2">Ver Tabla y Encestadores</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-lg border-0 text-center glass-panel">
+                    <img src="img/ecuavoley.jpg" class="card-img-top" alt="Ecuavoley">
+                    <div class="card-body d-flex flex-column">
+                        <h4 class="card-title fw-bold">🏐 ECUAVOLEY</h4>
+                        <p class="card-text small">Categoría Única. Clasificación oficial por puntos y sets ganados.</p>
+                        <a href="ecuavoley.html" class="btn btn-success mt-auto fw-bold py-2">Ver Tabla de Posiciones</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="text-white text-center py-4 mt-5 bg-dark">
+        <p class="mb-0">&copy; 2026 Cuerpo de Agentes de Control Metropolitano. Agt. Bonilla .H // B O N Y </p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
