@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        body { background-color: #0d0d0d; color: #d4af37; font-family: 'Segoe UI', sans-serif; }
+        .container { background: #1a1a1a; border: 1px solid #d4af37; border-radius: 15px; padding: 2rem; box-shadow: 0 0 20px rgba(212, 175, 55, 0.2); }
+        .card-match { background: #262626; border: 1px solid #d4af37; border-radius: 10px; color: #ffffff; transition: 0.3s; }
+        .card-match:hover { border: 1px solid #ffffff; box-shadow: 0 0 10px rgba(212, 175, 55, 0.5); }
+        .vs-badge { color: #d4af37; font-weight: 800; }
+        .btn-gold { border: 1px solid #d4af37; color: #d4af37; }
+        .btn-gold:hover { background: #d4af37; color: #000; }
+    </style>
+</head>
+<body class="p-3">
+    <div class="container my-5">
+        <a href="index.html" class="btn btn-gold mb-4"><i class="bi bi-arrow-left"></i> VOLVER</a>
+        <h2 class="text-center mb-5" id="titulo-dia"></h2>
+        
+        <div id="contenedor-partidos"></div>
+    </div>
+
+    <script src="cronograma_datos.js"></script>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const dia = params.get('dia');
+        document.getElementById('titulo-dia').innerText = `JORNADAS: ${dia} DE MAYO 2026`;
+        
+        // Renderizar solo Encuentros
+        const contPartidos = document.getElementById('contenedor-partidos');
+        if (cronogramaData[dia]) {
+            contPartidos.innerHTML = Object.entries(cronogramaData[dia]).map(([disc, pts]) => `
+                <h5 class="text-white mt-4"><i class="bi bi-shield-shaded"></i> ${disc}</h5>
+                ${pts.map(p => `
+                    <div class="card card-match mb-3 p-3">
+                        <div class="text-center mb-2">
+                            <span class="badge" style="background-color: #d4af37; color: #000; font-size: 0.70rem; letter-spacing: 1px;">CATEGORÍA: ${p.categoria}</span>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="fw-bold text-uppercase" style="width: 40%; text-align: center;">${p.equipoA}</div>
+                            <div class="vs-badge">VS</div>
+                            <div class="fw-bold text-uppercase" style="width: 40%; text-align: center;">${p.equipoB}</div>
+                        </div>
+                        <div class="text-center mt-2 small text-warning"><i class="bi bi-clock"></i> ${p.hora}</div>
+                    </div>
+                `).join('')}
+            `).join('');
+        }
+    </script>
+</body>
+</html>
