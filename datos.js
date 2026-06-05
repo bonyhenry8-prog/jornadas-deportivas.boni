@@ -55,15 +55,15 @@ const jorndasDeportivasData = {
                 unico: {
                     nombre: "Categoría Única",
                     equipos: [
-                        { id: "e_los_alcones", nombre: "LOS ALCONES", pj: 5, qg: 5, qp: 0, pts: 12 },
-                        { id: "e_unidad_tic", nombre: "UNIDAD TIC", pj: 5, qg: 4, qp: 01, pts: 11 },
-                        { id: "e_gallos", nombre: "GALLOS", pj: 3, qg: 3, qp: 1, pts: 9 },
-                        { id: "e_spartans", nombre: "SPARTANS", pj: 4, qg: 3, qp: 1, pts: 9 },
-                        { id: "e_tauros", nombre: "TAUROS", pj: 2, qg: 1, qp: 1, pts: 4 },
-                        { id: "e_titanes_ecuavoley", nombre: "LOS TITANES DEL ECUAVOLEY", pj: 4, qg: 1, qp: 3, pts: 3 },
-                        { id: "e_transporte_publico", nombre: "TRANSPORTE PÚBLICO", pj: 4, qg: 0, qp: 4, pts: 2 },
-                        { id: "e_bate_y_sale", nombre: "BATE Y SALE", pj: 3, qg: 0, qp: 3, pts: 1 },
-                        { id: "e_solo_panas", nombre: "SOLO PANAS", pj: 3, qg: 0, qp: 3, pts: 0 },                       
+                        { id: "e_los_alcones", nombre: "LOS ALCONES", pj: 6, qg: 6, qp: 0, pts: 15 },
+                        { id: "e_spartans", nombre: "SPARTANS", pj: 5, qg: 4, qp: 1, pts: 12 },
+                        { id: "e_unidad_tic", nombre: "UNIDAD TIC", pj: 5, qg: 4, qp: 1, pts: 11 },
+                        { id: "e_gallos", nombre: "GALLOS", pj: 5, qg: 3, qp: 2, pts: 9 },
+                        { id: "e_tauros", nombre: "TAUROS", pj: 3, qg: 1, qp: 1, pts: 7 },
+                        { id: "e_titanes_ecuavoley", nombre: "LOS TITANES DEL ECUAVOLEY", pj: 5, qg: 1, qp: 3, pts: 3 },
+                        { id: "e_bate_y_sale", nombre: "BATE Y SALE", pj: 4, qg: 1, qp: 3, pts: 3 },
+                        { id: "e_transporte_publico", nombre: "TRANSPORTE PÚBLICO", pj: 5, qg: 0, qp: 5, pts: 1 },
+                        { id: "e_solo_panas", nombre: "SOLO PANAS", pj: 4, qg: 0, qp: 4, pts: 0 },                       
                     ]
                 }
             }
