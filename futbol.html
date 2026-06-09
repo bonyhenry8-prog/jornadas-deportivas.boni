@@ -5,158 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jornadas Deportivas CACM - Fútbol</title>
     <style>
-        /* AÑADIDO PARA EL FONDO */
-        body {
-            background: url('img/fondo.futbol.jpg') no-repeat center center fixed;
-            background-size: cover;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            color: #333;
-        }
-
-        .navbar {
-            background-color: #1f4e78;
-            padding: 15px 20px;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        .navbar a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            padding: 8px 16px;
-            border-radius: 4px;
-            transition: background 0.3s;
-        }
-
-        .navbar a:hover {
-            background-color: #2c6aa2;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 30px auto;
-            padding: 20px;
-            /* Se mantiene el fondo blanco del contenedor */
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-        }
-
-        h1 {
-            text-align: center;
-            color: #1f4e78;
-            margin-bottom: 10px;
-        }
-
-        .subtitulo {
-            text-align: center;
-            color: #666;
-            margin-bottom: 30px;
-            font-size: 1.1em;
-        }
-
-        .menu-categorias {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-
-        .btn-categoria {
-            background-color: #e2e8f0;
-            color: #1f4e78;
-            border: 2px solid #1f4e78;
-            padding: 12px 24px;
-            font-size: 1.1em;
-            font-weight: bold;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .btn-categoria:hover, .btn-categoria.activo {
-            background-color: #1f4e78;
-            color: white;
-        }
-
-        .submenu-grupos {
-            display: none;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 25px;
-            background-color: #f8fafc;
-            padding: 12px;
-            border-radius: 6px;
-            border: 1px solid #e2e8f0;
-        }
-
-        .btn-grupo {
-            background-color: #cbd5e1;
-            color: #334155;
-            border: none;
-            padding: 10px 20px;
-            font-weight: bold;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-
-        .btn-grupo:hover, .btn-grupo.activo {
-            background-color: #475569;
-            color: white;
-        }
-
-        .seccion-contenido {
-            display: none;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 15px;
-            margin-bottom: 35px;
-            background-color: white;
-        }
-
-        th {
-            background-color: #1f4e78;
-            color: white;
-            font-weight: bold;
-            padding: 12px 10px;
-            text-align: center;
-            font-size: 1em;
-        }
-
-        th.equipo-col {
-            text-align: left;
-        }
-
-        td {
-            padding: 12px 10px;
-            border-bottom: 1px solid #dddddd;
-            font-size: 1em;
-        }
-
-        tr:hover {
-            background-color: #f9fbfd;
-        }
-
-        .bloque-info {
-            background-color: #f8fafc;
-            border: 1px dashed #cbd5e1;
-            padding: 15px;
-            text-align: center;
-            border-radius: 6px;
-            color: #64748b;
-            font-weight: 500;
-            margin-top: 10px;
-            margin-bottom: 30px;
-        }
+        /* TUS ESTILOS ORIGINALES */
+        body { background: url('img/fondo.futbol.jpg') no-repeat center center fixed; background-size: cover; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; color: #333; }
+        .navbar { background-color: #1f4e78; padding: 15px 20px; display: flex; justify-content: center; gap: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .navbar a { color: white; text-decoration: none; font-weight: bold; padding: 8px 16px; border-radius: 4px; transition: background 0.3s; }
+        .navbar a:hover { background-color: #2c6aa2; }
+        .container { max-width: 800px; margin: 30px auto; padding: 20px; background-color: white; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        h1 { text-align: center; color: #1f4e78; margin-bottom: 10px; }
+        .subtitulo { text-align: center; color: #666; margin-bottom: 30px; font-size: 1.1em; }
+        .menu-categorias { display: flex; justify-content: center; gap: 15px; margin-bottom: 20px; }
+        .btn-categoria { background-color: #e2e8f0; color: #1f4e78; border: 2px solid #1f4e78; padding: 12px 24px; font-size: 1.1em; font-weight: bold; border-radius: 6px; cursor: pointer; transition: all 0.3s ease; }
+        .btn-categoria:hover, .btn-categoria.activo { background-color: #1f4e78; color: white; }
+        .submenu-grupos { display: none; justify-content: center; gap: 15px; margin-bottom: 25px; background-color: #f8fafc; padding: 12px; border-radius: 6px; border: 1px solid #e2e8f0; }
+        .btn-grupo { background-color: #cbd5e1; color: #334155; border: none; padding: 10px 20px; font-weight: bold; border-radius: 4px; cursor: pointer; transition: all 0.2s; }
+        .btn-grupo:hover, .btn-grupo.activo { background-color: #475569; color: white; }
+        .seccion-contenido { display: none; }
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; margin-bottom: 35px; background-color: white; }
+        th { background-color: #1f4e78; color: white; font-weight: bold; padding: 12px 10px; text-align: center; font-size: 1em; }
+        th.equipo-col { text-align: left; }
+        td { padding: 12px 10px; border-bottom: 1px solid #dddddd; font-size: 1em; }
+        tr:hover { background-color: #f9fbfd; }
+        .bloque-info { background-color: #f8fafc; border: 1px dashed #cbd5e1; padding: 15px; text-align: center; border-radius: 6px; color: #64748b; font-weight: 500; margin-top: 10px; margin-bottom: 30px; }
+        
+        /* ESTILOS AGREGADOS PARA EL MODAL */
+        .btn-goleadores-inferior { background-color: #2c6aa2; color: white; padding: 15px 30px; font-size: 1.2em; font-weight: bold; border: none; border-radius: 8px; cursor: pointer; display: block; margin: 20px auto; }
+        .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); }
+        .modal-content { background-color: white; margin: 10% auto; padding: 20px; border-radius: 8px; width: 80%; max-width: 500px; }
+        .tabla-goleadores { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        .tabla-goleadores th, .tabla-goleadores td { border: 1px solid #ddd; padding: 8px; text-align: center; }
+        .tabla-goleadores th { background-color: #1f4e78; color: white; }
     </style>
 </head>
 <body>
@@ -185,91 +62,42 @@
 
         <div id="contenido-master" class="seccion-contenido">
             <h2>Categoría Máster - Tabla de Posiciones</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th style="width: 10%;">Pos</th>
-                        <th class="equipo-col" style="width: 50%;">Equipo</th>
-                        <th style="width: 13%;">PJ</th>
-                        <th style="width: 13%;">GD</th>
-                        <th style="width: 14%;">Pts</th>
-                    </tr>
-                </thead>
-                <tbody id="tabla-posiciones-master"></tbody>
-            </table>
-            <h2>Categoría Máster - Goleadores</h2>
-            <div class="bloque-info">⚽ Los datos de Goleadores se cargarán aquí.</div>
-            <h2>Categoría Máster - Tarjetas</h2>
-            <div class="bloque-info">🟨 🟥 El control de Tarjetas se cargará aquí.</div>
+            <table><thead><tr><th style="width: 10%;">Pos</th><th class="equipo-col" style="width: 50%;">Equipo</th><th style="width: 13%;">PJ</th><th style="width: 13%;">GD</th><th style="width: 14%;">Pts</th></tr></thead><tbody id="tabla-posiciones-master"></tbody></table>
         </div>
 
         <div id="contenido-senior-a" class="seccion-contenido">
             <h2>Categoría Senior - Grupo A - Tabla de Posiciones</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th style="width: 10%;">Pos</th>
-                        <th class="equipo-col" style="width: 50%;">Equipo</th>
-                        <th style="width: 13%;">PJ</th>
-                        <th style="width: 13%;">GD</th>
-                        <th style="width: 14%;">Pts</th>
-                    </tr>
-                </thead>
-                <tbody id="tabla-posiciones-senior-a"></tbody>
-            </table>
-             </table>
-            <h2>Categoría Máster - Goleadores</h2>
-            <div class="bloque-info">⚽ Los datos de Goleadores se cargarán aquí.</div>
-            <h2>Categoría Máster - Tarjetas</h2>
-            <div class="bloque-info">🟨 🟥 El control de Tarjetas se cargará aquí.</div>
+            <table><thead><tr><th style="width: 10%;">Pos</th><th class="equipo-col" style="width: 50%;">Equipo</th><th style="width: 13%;">PJ</th><th style="width: 13%;">GD</th><th style="width: 14%;">Pts</th></tr></thead><tbody id="tabla-posiciones-senior-a"></tbody></table>
         </div>
 
         <div id="contenido-senior-b" class="seccion-contenido">
             <h2>Categoría Senior - Grupo B - Tabla de Posiciones</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th style="width: 10%;">Pos</th>
-                        <th class="equipo-col" style="width: 50%;">Equipo</th>
-                        <th style="width: 13%;">PJ</th>
-                        <th style="width: 13%;">GD</th>
-                        <th style="width: 14%;">Pts</th>
-                    </tr>
-                </thead>
-                <tbody id="tabla-posiciones-senior-b"></tbody>
-            </table>
-             </table>
-            <h2>Categoría Máster - Goleadores</h2>
-            <div class="bloque-info">⚽ Los datos de Goleadores se cargarán aquí.</div>
-            <h2>Categoría Máster - Tarjetas</h2>
-            <div class="bloque-info">🟨 🟥 El control de Tarjetas se cargará aquí.</div>
+            <table><thead><tr><th style="width: 10%;">Pos</th><th class="equipo-col" style="width: 50%;">Equipo</th><th style="width: 13%;">PJ</th><th style="width: 13%;">GD</th><th style="width: 14%;">Pts</th></tr></thead><tbody id="tabla-posiciones-senior-b"></tbody></table>
         </div>
 
         <div id="contenido-femenino" class="seccion-contenido">
             <h2>Categoría Femenino - Tabla de Posiciones</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th style="width: 10%;">Pos</th>
-                        <th class="equipo-col" style="width: 50%;">Equipo</th>
-                        <th style="width: 13%;">PJ</th>
-                        <th style="width: 13%;">GD</th>
-                        <th style="width: 14%;">Pts</th>
-                    </tr>
-                </thead>
-                <tbody id="tabla-posiciones-femenino"></tbody>
-            </table>
-             </table>
-            <h2>Categoría Máster - Goleadores</h2>
-            <div class="bloque-info">⚽ Los datos de Goleadores se cargarán aquí.</div>
-            <h2>Categoría Máster - Tarjetas</h2>
-            <div class="bloque-info">🟨 🟥 El control de Tarjetas se cargará aquí.</div>
+            <table><thead><tr><th style="width: 10%;">Pos</th><th class="equipo-col" style="width: 50%;">Equipo</th><th style="width: 13%;">PJ</th><th style="width: 13%;">GD</th><th style="width: 14%;">Pts</th></tr></thead><tbody id="tabla-posiciones-femenino"></tbody></table>
+        </div>
+
+        <button class="btn-goleadores-inferior" onclick="abrirModal()">🏆 VER GOLEADORES</button>
+    </div>
+
+    <div id="modalGoleadores" class="modal">
+        <div class="modal-content">
+            <span onclick="cerrarModal()" style="float:right; cursor:pointer; font-size:24px;">&times;</span>
+            <h2>Lista de Goleadores</h2>
+            <div style="text-align:center; margin-bottom:15px;">
+                <button onclick="cargarGoleadores('MASTER')" class="btn-categoria" style="padding: 5px 10px; font-size: 0.9em;">MASTER</button>
+                <button onclick="cargarGoleadores('SENIOR')" class="btn-categoria" style="padding: 5px 10px; font-size: 0.9em;">SENIOR</button>
+                <button onclick="cargarGoleadores('FEMENINO')" class="btn-categoria" style="padding: 5px 10px; font-size: 0.9em;">FEMENINO</button>
+            </div>
+            <div id="contenido-goleadores">Selecciona una categoría.</div>
         </div>
     </div>
 
     <script src="datos.js"></script>
     <script src="app.js"></script>
-    
     <script>
         function mostrarCategoria(categoria, event) {
             document.getElementById('contenido-master').style.display = 'none';
@@ -279,35 +107,43 @@
             document.getElementById('submenu-senior').style.display = 'none';
             document.querySelectorAll('.btn-categoria').forEach(btn => btn.classList.remove('activo'));
             if(event) event.currentTarget.classList.add('activo');
-            if (categoria === 'master') {
-                document.getElementById('contenido-master').style.display = 'block';
-            } else if (categoria === 'femenino') {
-                document.getElementById('contenido-femenino').style.display = 'block';
-            } else if (categoria === 'senior') {
+            if (categoria === 'master') document.getElementById('contenido-master').style.display = 'block';
+            else if (categoria === 'femenino') document.getElementById('contenido-femenino').style.display = 'block';
+            else if (categoria === 'senior') {
                 document.getElementById('submenu-senior').style.display = 'flex';
-                document.querySelectorAll('.btn-grupo').forEach(btn => btn.classList.remove('activo'));
                 document.querySelectorAll('.btn-grupo')[0].classList.add('activo');
                 document.getElementById('contenido-senior-a').style.display = 'block';
             }
         }
-
         function mostrarGrupoSenior(grupo, event) {
             document.getElementById('contenido-senior-a').style.display = 'none';
             document.getElementById('contenido-senior-b').style.display = 'none';
             document.querySelectorAll('.btn-grupo').forEach(btn => btn.classList.remove('activo'));
             if(event) event.currentTarget.classList.add('activo');
-            if (grupo === 'a') {
-                document.getElementById('contenido-senior-a').style.display = 'block';
-            } else if (grupo === 'b') {
-                document.getElementById('contenido-senior-b').style.display = 'block';
-            }
+            if (grupo === 'a') document.getElementById('contenido-senior-a').style.display = 'block';
+            else if (grupo === 'b') document.getElementById('contenido-senior-b').style.display = 'block';
+        }
+        
+        /* LOGICA MODAL GOLEADORES */
+        function abrirModal() { document.getElementById('modalGoleadores').style.display = 'block'; }
+        function cerrarModal() { document.getElementById('modalGoleadores').style.display = 'none'; }
+
+        const datosGoleadores = {
+            'MASTER': [{j: 'E. CARRASCO', g: 11, e: 'ESCOLTA'}, {j: 'G. PUENTE', g: 9, e: 'GAT-S'}, {j: 'L. BARAJA', g: 5, e: 'ESCOLTA'}, {j: 'J. LOACHAMIN', g: 4, e: 'TRANS.'}],
+            'SENIOR': [{j: 'A. CHICHANDA', g: 18, e: 'TURISMO'}, {j: 'G. FLORES', g: 11, e: 'FILA 1'}, {j: 'J. SANTACRUZ', g: 11, e: 'TURISMO'}, {j: 'J. PEÑALOZA', g: 7, e: 'ADMIN.'}],
+            'FEMENINO': [{j: 'M. SIMBANA', g: 12, e: 'GAT-S'}, {j: 'E. ANELOA', g: 7, e: 'C. HIST.'}, {j: 'M. CEVALLOS', g: 3, e: 'TRANS. PUB.'}]
+        };
+
+        function cargarGoleadores(cat) {
+            const cont = document.getElementById('contenido-goleadores');
+            let html = `<table class="tabla-goleadores"><tr><th>Jugador</th><th>Goles</th><th>Equipo</th></tr>`;
+            datosGoleadores[cat].forEach(p => html += `<tr><td>${p.j}</td><td>${p.g}</td><td>${p.e}</td></tr>`);
+            cont.innerHTML = html + `</table>`;
         }
 
         document.addEventListener("DOMContentLoaded", () => {
-            const primerBoton = document.querySelectorAll('.btn-categoria')[0];
-            if(primerBoton) primerBoton.classList.add('activo');
-            const seccionMaster = document.getElementById('contenido-master');
-            if(seccionMaster) seccionMaster.style.display = 'block';
+            document.querySelectorAll('.btn-categoria')[0].classList.add('activo');
+            document.getElementById('contenido-master').style.display = 'block';
         });
     </script>
 </body>
