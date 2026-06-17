@@ -7,44 +7,44 @@ const jorndasDeportivasData = {
                 master: {
                     nombre: "Máster",
                     equipos: [
-                        { id: "m_leyendas_2004", nombre: "LEYENDAS 2004", pj: 6, gd: -1, pts: 10 },
-                        { id: "m_la_colacion_sub40", nombre: "CMC LA COLACION SUB 40", pj: 6, gd: -6, pts: 7 },
-                        { id: "m_escolta_metro", nombre: "ESCOLTA METROPOLITANA", pj: 7, gd: +21, pts: 18 },
-                        { id: "m_gats_calcibon", nombre: "GAT-S MÁSTER (LOS CALCIBON)", pj: 6, gd: +18, pts: 18 },
-                        { id: "m_transportes", nombre: "TRANSPORTES", pj: 6, gd: +14, pts: 13 },
+                        { id: "m_leyendas_2004", nombre: "LEYENDAS 2004", pj: 7, gd: 1, pts: 13 },
+                        { id: "m_la_colacion_sub40", nombre: "CMC LA COLACION SUB 40", pj: 7, gd: -8, pts: 7 },
+                        { id: "m_escolta_metro", nombre: "ESCOLTA METROPOLITANA", pj: 8, gd: +22, pts: 21 },
+                        { id: "m_gats_calcibon", nombre: "GAT-S MÁSTER (LOS CALCIBON)", pj: 7, gd: +15, pts: 18 },
+                        { id: "m_transportes", nombre: "TRANSPORTES", pj: 7, gd: +17, pts: 16 },
                         { id: "m_los_12_mas_1", nombre: "LOS 12+1", pj: 7, gd: -12, pts: 4 },
-                        { id: "m_nottingham_miedo", nombre: "ATLETICO IESS NOTTINGHAN-MIEDO", pj: 6, gd: +9, pts: 10 },
-                        { id: "m_transportes_caf", nombre: "TRANSPORTES CAF", pj: 7, gd: -13, pts: 4 },
-                        { id: "m_metros_galacticos", nombre: "LOS METROS GALÁCTICOS", pj: 6, gd: -24, pts: 0 }
+                        { id: "m_nottingham_miedo", nombre: "ATLETICO IESS NOTTINGHAN-MIEDO", pj: 7, gd: +8, pts: 10 },
+                        { id: "m_transportes_caf", nombre: "TRANSPORTES CAF", pj: 8, gd: -21, pts: 4 },
+                        { id: "m_metros_galacticos", nombre: "LOS METROS GALÁCTICOS", pj: 7, gd: -16, pts: 3 }
                     ]
                 },
                 senior: {
                     nombre: "Senior",
                     grupoA: [
-                        { id: "s_a_k_ninos", nombre: "K-NINOS", pj: 4, gd: -12, pts: 3 },
-                        { id: "s_a_administrativos", nombre: "ADMINISTRATIVOS", pj: 4, gd: 0, pts: 7 },
-                        { id: "s_a_fila_1", nombre: "FILA 1", pj: 4, gd: +13, pts: 10 },
+                        { id: "s_a_k_ninos", nombre: "K-NINOS", pj: 5, gd: -11, pts: 4 },
+                        { id: "s_a_administrativos", nombre: "ADMINISTRATIVOS", pj: 5, gd: -8, pts: 7 },
+                        { id: "s_a_fila_1", nombre: "FILA 1", pj: 5, gd: +21, pts: 13 },
                         { id: "s_a_fila_2", nombre: "FILA 2", pj: 5, gd: 5, pts: 8 },
-                        { id: "s_a_gats_lobos", nombre: "GAT-S A ( LOS LOBOS)", pj: 5, gd: -8, pts: 4 },
+                        { id: "s_a_gats_lobos", nombre: "GAT-S A ( LOS LOBOS)", pj: 6, gd: -8, pts: 5 },
                         { id: "s_a_gats_barnys", nombre: "GAT-S B (LOS BARNYS)", pj: 5, gd: 8, pts: 10 },
                         { id: "s_a_cmc_ecu911", nombre: "CMC Y ECU 911", pj: 5, gd: -9, pts: 2 }
                     ],
                     grupoB: [
-                        { id: "s_b_gam", nombre: "GAM", pj: 4, gd: 8, pts: 7 },
-                        { id: "s_b_transporte_publico", nombre: "TRANSPORTE PÚBLICO", pj: 4, gd: -18, pts: 5 },
-                        { id: "s_b_mala_fama_united", nombre: "MALA FAMA UNITED", pj: 4, gd: -9, pts: 7 },
-                        { id: "s_b_rescate", nombre: "RESCATE", pj: 4, gd: -3, pts: 6 },
-                        { id: "s_b_turismo", nombre: "TURISMO", pj: 4, gd: +31, pts: 7 },
-                        { id: "s_b_caballeria_fc", nombre: "CABALLERIA FC", pj: 4, gd: -18, pts: 1 }
+                        { id: "s_b_gam", nombre: "GAM", pj: 5, gd: 12, pts: 10 },
+                        { id: "s_b_transporte_publico", nombre: "TRANSPORTE PÚBLICO", pj: 5, gd: 2, pts: 8 },
+                        { id: "s_b_mala_fama_united", nombre: "MALA FAMA UNITED", pj: 5, gd: -11, pts: 7 },
+                        { id: "s_b_rescate", nombre: "RESCATE", pj: 5, gd: -4, pts: 6 },
+                        { id: "s_b_turismo", nombre: "TURISMO", pj: 5, gd: +28, pts: 7 },
+                        { id: "s_b_caballeria_fc", nombre: "CABALLERIA FC", pj: 5, gd: -17, pts: 4 }
                     ]
                 },
                 femenino: {
                     nombre: "Femenino",
                     equipos: [
-                        { id: "f_manuela_saenz", nombre: "U.O.Z MANUELA SÁENZ", pj: 4, gd: +3, pts: 5 },
-                        { id: "f_transporte_publico", nombre: "TRANSPORTE PÚBLICO", pj: 4, gd: 0, pts: 4 },
-                        { id: "f_gats_femenino", nombre: "GAT-S FEMENINO", pj: 4, gd: +14, pts: 10 },
-                        { id: "f_administrativos", nombre: "ADMINISTRATIVOS", pj: 4, gd: -17, pts: 3 }
+                        { id: "f_manuela_saenz", nombre: "U.O.Z MANUELA SÁENZ", pj: 5, gd: +3, pts: 6 },
+                        { id: "f_transporte_publico", nombre: "TRANSPORTE PÚBLICO", pj: 5, gd: 0, pts: 4 },
+                        { id: "f_gats_femenino", nombre: "GAT-S FEMENINO", pj: 5, gd: +16, pts: 13 },
+                        { id: "f_administrativos", nombre: "ADMINISTRATIVOS", pj: 5, gd: -19, pts: 3 }
                     ]
                 }
             }
@@ -56,14 +56,14 @@ const jorndasDeportivasData = {
                     nombre: "Categoría Única",
                     equipos: [
                         { id: "e_los_alcones", nombre: "LOS ALCONES", pj: 7, qg: 7, qp: 0, pts: 18 },
-                        { id: "e_spartans", nombre: "SPARTANS", pj: 6, qg: 4, qp: 2, pts: 12 },
-                        { id: "e_unidad_tic", nombre: "UNIDAD TIC", pj: 7, qg: 6, qp: 1, pts: 17 },
-                        { id: "e_gallos", nombre: "GALLOS", pj: 6, qg: 3, qp: 3, pts: 9 },
-                        { id: "e_tauros", nombre: "TAUROS", pj: 5, qg: 4, qp: 1, pts: 13 },
-                        { id: "e_titanes_ecuavoley", nombre: "LOS TITANES DEL ECUAVOLEY", pj: 6, qg: 1, qp: 5, pts: 3 },
-                        { id: "e_bate_y_sale", nombre: "BATE Y SALE", pj: 4, qg: 1, qp: 3, pts: 3 },
-                        { id: "e_transporte_publico", nombre: "TRANSPORTE PÚBLICO", pj: 6, qg: 1, qp: 6, pts: 1 },
-                        { id: "e_solo_panas", nombre: "SOLO PANAS", pj: 6, qg: 1, qp: 5, pts: 3 },                       
+                        { id: "e_spartans", nombre: "SPARTANS", pj: 7, qg: 5, qp: 2, pts: 15 },
+                        { id: "e_unidad_tic", nombre: "UNIDAD TIC", pj: 7, qg: 6, qp: 1, pts: 16 },
+                        { id: "e_gallos", nombre: "GALLOS", pj: 7, qg: 3, qp: 3, pts: 9 },
+                        { id: "e_tauros", nombre: "TAUROS", pj: 6, qg: 5, qp: 1, pts: 15 },
+                        { id: "e_titanes_ecuavoley", nombre: "LOS TITANES DEL ECUAVOLEY", pj: 7, qg: 1, qp: 6, pts: 3 },
+                        { id: "e_bate_y_sale", nombre: "BATE Y SALE", pj: 6, qg: 2, qp: 4, pts: 7 },
+                        { id: "e_transporte_publico", nombre: "TRANSPORTE PÚBLICO", pj: 7, qg: 0, qp: 7, pts: 1 },
+                        { id: "e_solo_panas", nombre: "SOLO PANAS", pj: 7, qg: 2, qp: 5, pts: 4 },                       
                     ]
                 }
             }
