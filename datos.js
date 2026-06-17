@@ -56,14 +56,14 @@ const jorndasDeportivasData = {
                     nombre: "Categoría Única",
                     equipos: [
                         { id: "e_los_alcones", nombre: "LOS ALCONES", pj: 7, qg: 7, qp: 0, pts: 18 },
-                        { id: "e_spartans", nombre: "SPARTANS", pj: 7, qg: 5, qp: 2, pts: 15 },
                         { id: "e_unidad_tic", nombre: "UNIDAD TIC", pj: 7, qg: 6, qp: 1, pts: 16 },
-                        { id: "e_gallos", nombre: "GALLOS", pj: 7, qg: 3, qp: 3, pts: 9 },
+                        { id: "e_spartans", nombre: "SPARTANS", pj: 7, qg: 5, qp: 2, pts: 15 },
                         { id: "e_tauros", nombre: "TAUROS", pj: 6, qg: 5, qp: 1, pts: 15 },
-                        { id: "e_titanes_ecuavoley", nombre: "LOS TITANES DEL ECUAVOLEY", pj: 7, qg: 1, qp: 6, pts: 3 },
+                        { id: "e_gallos", nombre: "GALLOS", pj: 7, qg: 3, qp: 3, pts: 9 },
                         { id: "e_bate_y_sale", nombre: "BATE Y SALE", pj: 6, qg: 2, qp: 4, pts: 7 },
-                        { id: "e_transporte_publico", nombre: "TRANSPORTE PÚBLICO", pj: 7, qg: 0, qp: 7, pts: 1 },
-                        { id: "e_solo_panas", nombre: "SOLO PANAS", pj: 7, qg: 2, qp: 5, pts: 4 },                       
+                        { id: "e_solo_panas", nombre: "SOLO PANAS", pj: 7, qg: 2, qp: 5, pts: 4 }, 
+                        { id: "e_titanes_ecuavoley", nombre: "LOS TITANES DEL ECUAVOLEY", pj: 7, qg: 1, qp: 6, pts: 3 },
+                        { id: "e_transporte_publico", nombre: "TRANSPORTE PÚBLICO", pj: 7, qg: 0, qp: 7, pts: 1 },                     
                     ]
                 }
             }
