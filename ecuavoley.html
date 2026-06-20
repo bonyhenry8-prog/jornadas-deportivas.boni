@@ -3,115 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ecuavoley - Jornadas Deportivas CACM</title>
+    <title>Ecuavoley - Fases Finales CACM 2026</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
     <style>
-        /* ESTO COLOCA TU IMAGEN DE FONDO EN TODA LA PÁGINA */
-        body {
-            background: url('img/fondo.ecuavoley.jpg') no-repeat center center fixed;
-            background-size: cover;
-            min-height: 100vh;
+        body { 
+            background: url('img/fondo.jpg') no-repeat center center fixed; 
+            background-size: cover; 
+            font-family: 'Segoe UI', sans-serif; 
         }
+        .navbar { background: rgba(0, 0, 0, 0.4); }
 
-        .header-voley {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('imagenes/banner-voley.jpg') no-repeat center center/cover;
+        .glass-panel { 
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 30px; 
+            padding: 40px; 
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3); 
+            margin: 30px auto; 
+            max-width: 1000px; 
             color: white;
-            padding: 40px 0;
         }
+        
+        .match-card { background: rgba(255, 255, 255, 0.15); border-radius: 20px; padding: 30px; margin: 30px auto; border: 1px solid rgba(255, 255, 255, 0.2); }
+        .fecha-partido { font-weight: 900; font-size: 1.3em; color: #8bc34a; /* Verde Ecuavoley */ }
+        
+        .team-img { 
+            width: 340px; height: 200px; object-fit: cover; border-radius: 12px; 
+            cursor: zoom-in; border: 3px solid white; transition: transform 0.3s;
+        }
+        .team-img:hover { transform: scale(1.03); }
+        
+        .vs-text { font-size: 2.5em; font-weight: 900; color: white; margin: 0 30px; text-shadow: 2px 2px 5px rgba(0,0,0,0.5); }
 
-        /* Hacemos el contenedor principal ligeramente transparente */
-        .glass-container {
-            background-color: rgba(255, 255, 255, 0.95) !important;
-            border-radius: 8px;
-        }
+        .modal-content { background-color: transparent; border: none; }
+        .modal-body { padding: 0; display: flex; justify-content: center; }
+        .modal-body img { border-radius: 15px; border: 3px solid white; max-width: 95%; max-height: 90vh; box-shadow: 0 0 30px rgba(0,0,0,0.5); }
     </style>
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
-        <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <img src="imagenes/logo-institucion.png" alt="Logo" width="40" height="40" class="d-inline-block align-text-top me-2 rounded-circle bg-white">
-                <span class="fs-6 fs-md-5">Jornadas Deportivas CACM</span>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto text-center">
-                    <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-door-fill"></i> Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="futbol.html">⚽ Fútbol</a></li>
-                    <li class="nav-item"><a class="nav-link" href="basketball.html">🏀 Basketball</a></li>
-                    <li class="nav-item"><a class="nav-link active fw-bold" href="ecuavoley.html">🏐 Ecuavoley</a></li>
-                    <li class="nav-item"><a class="nav-link" href="galeria.html"><i class="bi bi-images"></i> Galería</a></li>
-                </ul>
+<nav class="navbar navbar-dark mb-4">
+    <div class="container"><a class="navbar-brand" href="index.html">⬅ VOLVER AL INICIO</a></div>
+</nav>
+
+<div class="container text-center">
+    <div class="glass-panel">
+        <h1 class="mb-4 fw-bold">🏐 SEMIFINALES DE ECUAVOLEY</h1>
+        <div id="content-area"></div>
+    </div>
+</div>
+
+<!-- Modal Animado -->
+<div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content"><div class="modal-body"><img id="modalImage" src="" alt="Equipo"></div></div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    const partidosVoly = [
+        { fecha: "MARTES 23", hora: "09:30 - 11:30", t1: "UNIDAD TIC", img1: "img/unidad_tic.jpg", t2: "LOS ALCONES", img2: "img/alcones.jpg" },
+        { fecha: "MARTES 23", hora: "11:30 - 13:30", t1: "TAUROS", img1: "img/tauros.jpg", t2: "SPARTANS", img2: "img/spartans.jpg" }
+    ];
+
+    function showImage(src) {
+        document.getElementById('modalImage').src = src;
+        new bootstrap.Modal(document.getElementById('imageModal')).show();
+    }
+
+    let html = '';
+    partidosVoly.forEach(p => {
+        html += `
+        <div class="match-card">
+            <div class="fecha-partido">${p.fecha}</div>
+            <div class="mb-3">🕒 ${p.hora}</div>
+            <div class="d-flex align-items-center justify-content-center">
+                <div onclick="showImage('${p.img1}')"><img src="${p.img1}" class="team-img"><p class="fw-bold mt-2">${p.t1}</p></div>
+                <div class="vs-text">VS</div>
+                <div onclick="showImage('${p.img2}')"><img src="${p.img2}" class="team-img"><p class="fw-bold mt-2">${p.t2}</p></div>
             </div>
-        </div>
-    </nav>
-
-    <header class="header-voley text-center mb-4">
-        <div class="container">
-            <h1 class="fw-bold">🏐 Campeonato de Ecuavoley</h1>
-            <p class="lead mb-0">Categoría Única - Tabla de Posiciones Oficial</p>
-        </div>
-    </header>
-
-    <main class="container my-5">
-        <div class="row justify-content-center">
-            
-            <div class="col-12 col-lg-10">
-                <div class="card shadow-sm border-0 p-3 bg-white glass-container">
-                    <h4 class="fw-bold mb-3 text-success border-bottom pb-2"><i class="bi bi-trophy-fill"></i> Tabla de Posiciones</h4>
-                    <div class="table-responsive">
-                        <table class="table table-striped table-hover align-middle text-center">
-                            <thead class="table-dark">
-                                <tr>
-                                    <th>Pos</th>
-                                    <th class="text-start">Trío / Equipo</th>
-                                    <th>PJ</th>
-                                    <th>SG (Sets Ganados)</th>
-                                    <th>SP (Sets Perdidos)</th>
-                                    <th class="table-success text-dark">Pts</th>
-                                </tr>
-                            </thead>
-                            <tbody id="tabla-voley-posiciones">
-                                </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </main>
-
-    <footer class="bg-dark text-white text-center py-4 mt-5">
-        <div class="container">
-            <p class="mb-0">&copy; 2026 Cuerpo de Agentes de Control Metropolitano.</p>
-        </div>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="datos.js"></script>
-    
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const data = jorndasDeportivasData.disciplinas.ecuavoley.categorias.unico;
-            const tablaPos = document.getElementById("tabla-voley-posiciones");
-            
-            if (tablaPos && data.equipos) {
-                tablaPos.innerHTML = data.equipos.map((e, index) => `
-                    <tr>
-                        <td class="fw-bold">${index + 1}</td>
-                        <td class="text-start fw-bold">${e.nombre}</td>
-                        <td>${e.pj}</td>
-                        <td>${e.qg}</td>
-                        <td>${e.qp}</td>
-                        <td class="fw-bold table-success text-dark">${e.pts}</td>
-                    </tr>
-                `).join('');
-            }
-        });
-    </script>
+        </div>`;
+    });
+    document.getElementById('content-area').innerHTML = html;
+</script>
 </body>
 </html>

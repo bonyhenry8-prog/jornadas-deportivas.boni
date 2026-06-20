@@ -3,148 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jornadas Deportivas CACM - Fútbol</title>
+    <title>Fútbol - Fases Finales CACM 2026</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        /* TUS ESTILOS ORIGINALES */
-        body { background: url('img/fondo.futbol.jpg') no-repeat center center fixed; background-size: cover; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; color: #333; }
-        .navbar { background-color: #1f4e78; padding: 15px 20px; display: flex; justify-content: center; gap: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        .navbar a { color: white; text-decoration: none; font-weight: bold; padding: 8px 16px; border-radius: 4px; transition: background 0.3s; }
-        .navbar a:hover { background-color: #2c6aa2; }
-        .container { max-width: 800px; margin: 30px auto; padding: 20px; background-color: white; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
-        h1 { text-align: center; color: #1f4e78; margin-bottom: 10px; }
-        .subtitulo { text-align: center; color: #666; margin-bottom: 30px; font-size: 1.1em; }
-        .menu-categorias { display: flex; justify-content: center; gap: 15px; margin-bottom: 20px; }
-        .btn-categoria { background-color: #e2e8f0; color: #1f4e78; border: 2px solid #1f4e78; padding: 12px 24px; font-size: 1.1em; font-weight: bold; border-radius: 6px; cursor: pointer; transition: all 0.3s ease; }
-        .btn-categoria:hover, .btn-categoria.activo { background-color: #1f4e78; color: white; }
-        .submenu-grupos { display: none; justify-content: center; gap: 15px; margin-bottom: 25px; background-color: #f8fafc; padding: 12px; border-radius: 6px; border: 1px solid #e2e8f0; }
-        .btn-grupo { background-color: #cbd5e1; color: #334155; border: none; padding: 10px 20px; font-weight: bold; border-radius: 4px; cursor: pointer; transition: all 0.2s; }
-        .btn-grupo:hover, .btn-grupo.activo { background-color: #475569; color: white; }
-        .seccion-contenido { display: none; }
-        table { width: 100%; border-collapse: collapse; margin-top: 15px; margin-bottom: 35px; background-color: white; }
-        th { background-color: #1f4e78; color: white; font-weight: bold; padding: 12px 10px; text-align: center; font-size: 1em; }
-        th.equipo-col { text-align: left; }
-        td { padding: 12px 10px; border-bottom: 1px solid #dddddd; font-size: 1em; }
-        tr:hover { background-color: #f9fbfd; }
-        .bloque-info { background-color: #f8fafc; border: 1px dashed #cbd5e1; padding: 15px; text-align: center; border-radius: 6px; color: #64748b; font-weight: 500; margin-top: 10px; margin-bottom: 30px; }
+        body { 
+            background: url('img/fondo.jpg') no-repeat center center fixed; 
+            background-size: cover; 
+            font-family: 'Segoe UI', sans-serif; 
+        }
+        .navbar { background: rgba(0, 0, 0, 0.4); }
+
+        /* Panel Glassmorphism */
+        .glass-panel { 
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 30px; 
+            padding: 40px; 
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3); 
+            margin: 30px auto; 
+            max-width: 1000px; 
+            color: white;
+        }
         
-        /* ESTILOS AGREGADOS PARA EL MODAL */
-        .btn-goleadores-inferior { background-color: #2c6aa2; color: white; padding: 15px 30px; font-size: 1.2em; font-weight: bold; border: none; border-radius: 8px; cursor: pointer; display: block; margin: 20px auto; }
-        .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); }
-        .modal-content { background-color: white; margin: 10% auto; padding: 20px; border-radius: 8px; width: 80%; max-width: 500px; }
-        .tabla-goleadores { width: 100%; border-collapse: collapse; margin-top: 10px; }
-        .tabla-goleadores th, .tabla-goleadores td { border: 1px solid #ddd; padding: 8px; text-align: center; }
-        .tabla-goleadores th { background-color: #1f4e78; color: white; }
+        .btn-categoria { border: 2px solid white; color: white; font-weight: 700; padding: 12px 35px; margin: 0 10px; transition: 0.3s; }
+        .btn-categoria.activo { background-color: #1f4e78; border-color: #1f4e78; }
+
+        .match-card { background: rgba(255, 255, 255, 0.15); border-radius: 20px; padding: 30px; margin: 30px auto; border: 1px solid rgba(255, 255, 255, 0.2); }
+        .fecha-partido { font-weight: 900; font-size: 1.3em; color: #ffeb3b; }
+        
+        /* Imágenes Rectangulares */
+        .team-img { 
+            width: 340px; height: 200px; object-fit: cover; border-radius: 12px; 
+            cursor: zoom-in; border: 3px solid white; transition: transform 0.3s;
+        }
+        .team-img:hover { transform: scale(1.03); }
+        
+        .vs-text { font-size: 2.5em; font-weight: 900; color: white; margin: 0 30px; text-shadow: 2px 2px 5px rgba(0,0,0,0.5); }
+
+        /* Animación Modal */
+        .modal-content { background-color: transparent; border: none; }
+        .modal-body { padding: 0; display: flex; justify-content: center; }
+        .modal-body img { border-radius: 15px; border: 3px solid white; max-width: 95%; max-height: 90vh; box-shadow: 0 0 30px rgba(0,0,0,0.5); }
     </style>
 </head>
 <body>
 
-    <div class="navbar">
-        <a href="index.html">Inicio</a>
-        <a href="futbol.html" style="background-color: #2c6aa2;">Fútbol</a>
-        <a href="basketball.html">Basketball</a>
-        <a href="ecuavoley.html">Ecuavoley</a>
+<nav class="navbar navbar-dark mb-4">
+    <div class="container"><a class="navbar-brand" href="index.html">⬅ VOLVER AL INICIO</a></div>
+</nav>
+
+<div class="container text-center">
+    <div class="glass-panel">
+        <h1 class="mb-4 fw-bold">⚽ SEMIFINALES DE FÚTBOL</h1>
+        <div class="mb-4">
+            <button class="btn btn-categoria" onclick="render('master')">MÁSTER</button>
+            <button class="btn btn-categoria" onclick="render('senior')">SENIOR</button>
+        </div>
+        <div id="content-area"></div>
     </div>
+</div>
 
-    <div class="container">
-        <h1>JORNADAS DEPORTIVAS</h1>
-        <p class="subtitulo">Cuerpo de Agentes de Control Metropolitano - Área de Fútbol</p>
-
-        <div class="menu-categorias">
-            <button class="btn-categoria" onclick="mostrarCategoria('master', event)">MÁSTER</button>
-            <button class="btn-categoria" onclick="mostrarCategoria('senior', event)">SENIOR</button>
-            <button class="btn-categoria" onclick="mostrarCategoria('femenino', event)">FEMENINO</button>
-        </div>
-
-        <div id="submenu-senior" class="submenu-grupos">
-            <button class="btn-grupo" onclick="mostrarGrupoSenior('a', event)">GRUPO A</button>
-            <button class="btn-grupo" onclick="mostrarGrupoSenior('b', event)">GRUPO B</button>
-        </div>
-
-        <div id="contenido-master" class="seccion-contenido">
-            <h2>Categoría Máster - Tabla de Posiciones</h2>
-            <table><thead><tr><th style="width: 10%;">Pos</th><th class="equipo-col" style="width: 50%;">Equipo</th><th style="width: 13%;">PJ</th><th style="width: 13%;">GD</th><th style="width: 14%;">Pts</th></tr></thead><tbody id="tabla-posiciones-master"></tbody></table>
-        </div>
-
-        <div id="contenido-senior-a" class="seccion-contenido">
-            <h2>Categoría Senior - Grupo A - Tabla de Posiciones</h2>
-            <table><thead><tr><th style="width: 10%;">Pos</th><th class="equipo-col" style="width: 50%;">Equipo</th><th style="width: 13%;">PJ</th><th style="width: 13%;">GD</th><th style="width: 14%;">Pts</th></tr></thead><tbody id="tabla-posiciones-senior-a"></tbody></table>
-        </div>
-
-        <div id="contenido-senior-b" class="seccion-contenido">
-            <h2>Categoría Senior - Grupo B - Tabla de Posiciones</h2>
-            <table><thead><tr><th style="width: 10%;">Pos</th><th class="equipo-col" style="width: 50%;">Equipo</th><th style="width: 13%;">PJ</th><th style="width: 13%;">GD</th><th style="width: 14%;">Pts</th></tr></thead><tbody id="tabla-posiciones-senior-b"></tbody></table>
-        </div>
-
-        <div id="contenido-femenino" class="seccion-contenido">
-            <h2>Categoría Femenino - Tabla de Posiciones</h2>
-            <table><thead><tr><th style="width: 10%;">Pos</th><th class="equipo-col" style="width: 50%;">Equipo</th><th style="width: 13%;">PJ</th><th style="width: 13%;">GD</th><th style="width: 14%;">Pts</th></tr></thead><tbody id="tabla-posiciones-femenino"></tbody></table>
-        </div>
-
-        <button class="btn-goleadores-inferior" onclick="abrirModal()">🏆 VER GOLEADORES</button>
-    </div>
-
-    <div id="modalGoleadores" class="modal">
+<!-- Modal Animado -->
+<div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
-            <span onclick="cerrarModal()" style="float:right; cursor:pointer; font-size:24px;">&times;</span>
-            <h2>Lista de Goleadores</h2>
-            <div style="text-align:center; margin-bottom:15px;">
-                <button onclick="cargarGoleadores('MASTER')" class="btn-categoria" style="padding: 5px 10px; font-size: 0.9em;">MASTER</button>
-                <button onclick="cargarGoleadores('SENIOR')" class="btn-categoria" style="padding: 5px 10px; font-size: 0.9em;">SENIOR</button>
-                <button onclick="cargarGoleadores('FEMENINO')" class="btn-categoria" style="padding: 5px 10px; font-size: 0.9em;">FEMENINO</button>
+            <div class="modal-body">
+                <img id="modalImage" src="" alt="Equipo">
             </div>
-            <div id="contenido-goleadores">Selecciona una categoría.</div>
         </div>
     </div>
+</div>
 
-    <script src="datos.js"></script>
-    <script src="app.js"></script>
-    <script>
-        function mostrarCategoria(categoria, event) {
-            document.getElementById('contenido-master').style.display = 'none';
-            document.getElementById('contenido-senior-a').style.display = 'none';
-            document.getElementById('contenido-senior-b').style.display = 'none';
-            document.getElementById('contenido-femenino').style.display = 'none';
-            document.getElementById('submenu-senior').style.display = 'none';
-            document.querySelectorAll('.btn-categoria').forEach(btn => btn.classList.remove('activo'));
-            if(event) event.currentTarget.classList.add('activo');
-            if (categoria === 'master') document.getElementById('contenido-master').style.display = 'block';
-            else if (categoria === 'femenino') document.getElementById('contenido-femenino').style.display = 'block';
-            else if (categoria === 'senior') {
-                document.getElementById('submenu-senior').style.display = 'flex';
-                document.querySelectorAll('.btn-grupo')[0].classList.add('activo');
-                document.getElementById('contenido-senior-a').style.display = 'block';
-            }
-        }
-        function mostrarGrupoSenior(grupo, event) {
-            document.getElementById('contenido-senior-a').style.display = 'none';
-            document.getElementById('contenido-senior-b').style.display = 'none';
-            document.querySelectorAll('.btn-grupo').forEach(btn => btn.classList.remove('activo'));
-            if(event) event.currentTarget.classList.add('activo');
-            if (grupo === 'a') document.getElementById('contenido-senior-a').style.display = 'block';
-            else if (grupo === 'b') document.getElementById('contenido-senior-b').style.display = 'block';
-        }
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    const data = {
+        master: [
+            { fecha: "LUNES 22", hora: "08:00 - 10:00", t1: "GAT-S", img1: "img/gat-s.jpg", t2: "TRANSPORTES", img2: "img/transportes.jpg" },
+            { fecha: "LUNES 22", hora: "10:00 - 12:00", t1: "ESCOLTA METRO.", img1: "img/escolta.jpg", t2: "NOTTINGHAN", img2: "img/nottingham.jpg" }
+        ],
+        senior: [
+            { fecha: "LUNES 22", hora: "12:00 - 14:00", t1: "FILA 1", img1: "img/fila1.jpg", t2: "TRANSPORTE PÚB.", img2: "img/transpub.jpg" },
+            { fecha: "LUNES 22", hora: "14:00 - 16:00", t1: "GAM", img1: "img/gam.jpg", t2: "GAT-S 2", img2: "img/gat-s2.jpg" }
+        ]
+    };
+
+    function showImage(src) {
+        document.getElementById('modalImage').src = src;
+        const modal = new bootstrap.Modal(document.getElementById('imageModal'));
+        modal.show();
+    }
+
+    function render(cat) {
+        document.querySelectorAll('.btn-categoria').forEach(b => b.classList.remove('activo'));
+        event.target.classList.add('activo');
         
-        /* LOGICA MODAL GOLEADORES */
-        function abrirModal() { document.getElementById('modalGoleadores').style.display = 'block'; }
-        function cerrarModal() { document.getElementById('modalGoleadores').style.display = 'none'; }
-
-        const datosGoleadores = {
-            'MASTER': [{j: 'E. CARRASCO', g: 12, e: 'ESCOLTA'}, {j: 'G. PUENTE', g: 9, e: 'GAT-S'}, {j: 'L. BARAJA', g: 6, e: 'ESCOLTA'}, {j: 'J. LOACHAMIN', g: 4, e: 'TRANS.'}],
-            'SENIOR': [{j: 'A. CHICHANDA', g: 18, e: 'TURISMO'}, {j: 'G. FLORES', g: 13, e: 'FILA 1'}, {j: 'J. SANTACRUZ', g: 11, e: 'TURISMO'}, {j: 'J. PEÑALOZA', g: 7, e: 'ADMIN.'}, {j: 'S. CHIMBORAZO', g: 7, e: 'GAT-S 2'},{j: 'F. MORENO', g: 6, e: 'GAT-S 2'}, {j: 'V. LOPEZ', g: 6, e: 'TRANS. PUBLICO'}],
-            'FEMENINO': [{j: 'M. SIMBANA', g: 12, e: 'GAT-S'}, {j: 'E. ANELOA', g: 7, e: 'C. HIST.'}, {j: 'M. CEVALLOS', g: 3, e: 'TRANS. PUB.'}]
-        };
-
-        function cargarGoleadores(cat) {
-            const cont = document.getElementById('contenido-goleadores');
-            let html = `<table class="tabla-goleadores"><tr><th>Jugador</th><th>Goles</th><th>Equipo</th></tr>`;
-            datosGoleadores[cat].forEach(p => html += `<tr><td>${p.j}</td><td>${p.g}</td><td>${p.e}</td></tr>`);
-            cont.innerHTML = html + `</table>`;
-        }
-
-        document.addEventListener("DOMContentLoaded", () => {
-            document.querySelectorAll('.btn-categoria')[0].classList.add('activo');
-            document.getElementById('contenido-master').style.display = 'block';
+        let html = `<h3 class="mb-4">Categoría ${cat.toUpperCase()}</h3>`;
+        data[cat].forEach(p => {
+            html += `
+            <div class="match-card">
+                <div class="fecha-partido">${p.fecha}</div>
+                <div class="mb-2">🕒 ${p.hora}</div>
+                <div class="d-flex align-items-center justify-content-center">
+                    <div onclick="showImage('${p.img1}')"><img src="${p.img1}" class="team-img"><p class="fw-bold mt-2">${p.t1}</p></div>
+                    <div class="vs-text">VS</div>
+                    <div onclick="showImage('${p.img2}')"><img src="${p.img2}" class="team-img"><p class="fw-bold mt-2">${p.t2}</p></div>
+                </div>
+            </div>`;
         });
-    </script>
+        document.getElementById('content-area').innerHTML = html;
+    }
+</script>
 </body>
 </html>
