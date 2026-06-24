@@ -12,29 +12,34 @@
         .glass-panel { 
             background: rgba(255, 255, 255, 0.25);
             backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
             border: 1px solid rgba(255, 255, 255, 0.3);
             border-radius: 30px; 
-            padding: 40px; 
-            box-shadow: 0 15px 40px rgba(0,0,0,0.3); 
-            margin: 30px auto; 
-            max-width: 1000px; 
+            padding: 20px; 
+            margin: 20px auto; 
+            max-width: 900px; 
             color: white;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
         }
         
-        .match-card { background: rgba(255, 255, 255, 0.15); border-radius: 20px; padding: 30px; margin: 30px auto; border: 1px solid rgba(255, 255, 255, 0.2); }
-        .fecha-partido { font-weight: 900; font-size: 1.3em; color: #8bc34a; /* Verde Ecuavoley */ }
+        .match-card { background: rgba(255, 255, 255, 0.15); border-radius: 20px; padding: 20px; margin: 20px 0; border: 1px solid rgba(255, 255, 255, 0.2); }
+        .fecha-partido { font-weight: 900; font-size: 1.2em; color: #8bc34a; }
         
+        /* Imágenes responsivas */
         .team-img { 
-            width: 340px; height: 200px; object-fit: cover; border-radius: 12px; 
-            cursor: zoom-in; border: 3px solid white; transition: transform 0.3s;
+            width: 100%; height: 150px; object-fit: cover; border-radius: 12px; 
+            cursor: zoom-in; border: 3px solid white; transition: 0.3s;
         }
-        .team-img:hover { transform: scale(1.03); }
         
-        .vs-text { font-size: 2.5em; font-weight: 900; color: white; margin: 0 30px; text-shadow: 2px 2px 5px rgba(0,0,0,0.5); }
+        .vs-text { font-size: 1.5em; font-weight: 900; color: white; margin: 10px 0; text-shadow: 2px 2px 5px rgba(0,0,0,0.5); }
+
+        /* Ajuste para móviles: apilamiento */
+        @media (max-width: 768px) {
+            .row-match { flex-direction: column; }
+        }
 
         .modal-content { background-color: transparent; border: none; }
-        .modal-body { padding: 0; display: flex; justify-content: center; }
-        .modal-body img { border-radius: 15px; border: 3px solid white; max-width: 95%; max-height: 90vh; box-shadow: 0 0 30px rgba(0,0,0,0.5); }
+        .modal-body img { border-radius: 15px; border: 3px solid white; width: 100%; }
     </style>
 </head>
 <body>
@@ -56,7 +61,6 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-    // Solo debes editar los datos aquí
     const partidos = [
         { fase: "Tercer Lugar", fecha: "JUEVES 25", hora: "14:00", t1: "UNIDAD TIC", img1: "img/unidad_tic.jpg", t2: "SPARTANS", img2: "img/spartans.jpg" },
         { fase: "Gran Final", fecha: "VIERNES 26", hora: "11:00", t1: "TAUROS", img1: "img/tauros.jpg", t2: "LOS ALCONES", img2: "img/losalcones.jpg" }
@@ -71,12 +75,16 @@
     partidos.forEach(p => {
         html += `
         <div class="match-card">
-            <div class="fecha-partido">${p.fecha}</div>
+            <div class="fecha-partido">${p.fase} - ${p.fecha}</div>
             <div class="mb-3">🕒 ${p.hora}</div>
-            <div class="d-flex align-items-center justify-content-center">
-                <div onclick="showImage('${p.img1}')"><img src="${p.img1}" class="team-img"><p class="fw-bold mt-2">${p.t1}</p></div>
-                <div class="vs-text">VS</div>
-                <div onclick="showImage('${p.img2}')"><img src="${p.img2}" class="team-img"><p class="fw-bold mt-2">${p.t2}</p></div>
+            <div class="d-flex row-match align-items-center justify-content-center">
+                <div class="col-12 col-md-5" onclick="showImage('${p.img1}')">
+                    <img src="${p.img1}" class="team-img"><p class="fw-bold mt-2">${p.t1}</p>
+                </div>
+                <div class="col-12 col-md-2 vs-text">VS</div>
+                <div class="col-12 col-md-5" onclick="showImage('${p.img2}')">
+                    <img src="${p.img2}" class="team-img"><p class="fw-bold mt-2">${p.t2}</p>
+                </div>
             </div>
         </div>`;
     });
